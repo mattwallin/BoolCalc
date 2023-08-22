@@ -1,7 +1,10 @@
 import calc from "./calc";
 
 describe('calc', () => {
-    it('returns true if a string is entered', () => {
-        expect(calc("ok")).toBeTruthy();
+    it('returns false if no string is entered', () => {
+        expect(calc("")).toBeFalsy();
+    });
+    it('returns true if the string is equal to true', () => {
+        expect(calc("true")).toBeTruthy();
     });
 });

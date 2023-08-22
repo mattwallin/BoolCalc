@@ -10,4 +10,7 @@ describe('calc', () => {
     it('returns true if string is equal to not false', () => {
         expect(calc("not false")).toBeTruthy();
     });
+    it('returns false if string contains not true', () => {
+        expect(calc("not true")).toBeFalsy();
+    })
 });

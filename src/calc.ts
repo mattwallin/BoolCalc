@@ -10,10 +10,10 @@ export default function calc(str: string): boolean {
         if(result === false && andFlag) {
             return false;
         }
-        if(result && orFlag) {
+        else if(result && orFlag) {
             return true;
         }
-        if(notFlag) {
+        else if(notFlag) {
             if(curr === "true") {
                 result = false;
             }
@@ -22,24 +22,26 @@ export default function calc(str: string): boolean {
             }
             notFlag = false;
         }
-        else if(curr === "true") {
-            result = true;
-        }
-        else if(curr === "false") {
-            result = false;
-        }
-        switch(curr) {
-            case "not":
-                notFlag = true;
-                break;
-            case "and":
-                andFlag = true;
-                break;
-            case "or":
-                orFlag = true;
-                break;
-            default:
-                break; 
+        else {
+            switch(curr) {
+                case "true":
+                    result = true;
+                    break;
+                case "false":
+                    result = false;
+                    break;
+                case "not":
+                    notFlag = true;
+                    break;
+                case "and":
+                    andFlag = true;
+                    break;
+                case "or":
+                    orFlag = true;
+                    break;
+                default:
+                    break; 
+            }
         }
     })
     return result!;

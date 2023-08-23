@@ -1,14 +1,16 @@
-//Implement OR keyword
 //Implement AND keyword
 
 export default function calc(str: string): boolean {
-    let result = false;
+    let result: boolean | undefined = undefined;
     let notFlag = false;
     let orFlag = false;
     let andFlag = false;
     let strArr = str.toLowerCase().split(" ");
     strArr.map((curr) => {
-        if(result === true && orFlag) {
+        if(result === false && andFlag) {
+            return false;
+        }
+        if(result && orFlag) {
             return true;
         }
         if(notFlag) {
@@ -22,6 +24,9 @@ export default function calc(str: string): boolean {
         }
         else if(curr === "true") {
             result = true;
+        }
+        else if(curr === "false") {
+            result = false;
         }
         switch(curr) {
             case "not":
@@ -37,5 +42,5 @@ export default function calc(str: string): boolean {
                 break; 
         }
     })
-    return result;
+    return result!;
 }

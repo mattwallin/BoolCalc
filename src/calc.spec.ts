@@ -19,4 +19,7 @@ describe('calc', () => {
     it('returns true if string is "true or false"', () => {
         expect(calc("false or not true")).toBeFalsy();
     });
+    it('returns true if string is "true and false"', () => {
+        expect(calc("true and false")).toBeFalsy();
+    })
 });

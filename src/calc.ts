@@ -1,4 +1,3 @@
-//filter the parentheses out of the string for eval func
 interface correctionInterface {
     "not": string;
     "and": string;

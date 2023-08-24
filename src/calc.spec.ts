@@ -179,4 +179,16 @@ describe('calc', () => {
     it('returns true when string is "((false) or not true)"', () => {
         expect(calc("((true) or not false)")).toBeTruthy();
     });
+    it('returns false when string is "(true or true or true) and false"', () => {
+        expect(calc("(true or true or true) and false")).toBeFalsy();
+    });
+    it('returns true when string is "true or true or true and false"', () => {
+        expect(calc("true or true or true and false")).toBeTruthy();
+    });
+    it('returns true when string is "TRUE OR FALSE AND NOT FALSE"', () => {
+        expect(calc("TRUE OR FALSE AND NOT FALSE")).toBeTruthy();
+    });
+    it('returns true when string is "NOT (TRUE AND TRUE)"', () => {
+        expect(calc("NOT (TRUE AND TRUE)")).toBeFalsy();
+    });
 });

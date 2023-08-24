@@ -90,7 +90,7 @@ describe('calc', () => {
     });
 
     it('returns false when string is "(not true) and true"', () => {
-        expect(calc("not true) and true")).toBeFalsy();
+        expect(calc("(not true) and true")).toBeFalsy();
     });
     it('returns true when string is "(not false) and not false"', () => {
         expect(calc("(not false) and not false")).toBeTruthy();
